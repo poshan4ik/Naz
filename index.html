@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан Назым — вкуc традиций в Таразе</title>
+    <meta name="description" content="Ресторан Назым в Таразе: авторская и национальная кухня, доставка на дом, бронирование столиков и оплата картой.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23c05621'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Arial' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3E%D0%9D%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+
+<!-- ================= ШАПКА ================= -->
+<header class="header" id="header">
+    <div class="container header-inner">
+        <a class="logo" href="#top"><span class="logo-mark">Н</span> Ресторан <b>Назым</b></a>
+
+        <nav class="nav" id="nav">
+            <a href="#menu">Меню</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#booking">Бронирование</a>
+            <a href="#about">О нас</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="header-buttons">
+            <button class="button small secondary" id="openDelivery" type="button">🛵 Доставка на дом</button>
+            <button class="button small staff-btn" id="openStaff" type="button">🔐 <span class="btn-label">Персонал</span></button>
+            <button class="button small cart-btn" id="openCart" type="button">
+                🛒 <span class="cart-label">Корзина</span> <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="burger" id="burger" type="button" aria-label="Меню">☰</button>
+        </div>
+    </div>
+</header>
+
+<main id="top">
+
+    <!-- ================= БАННЕР ================= -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <p class="eyebrow">Авторская и национальная кухня · Тараз</p>
+            <h1 class="hero-title">Вкус традиций<br>и уютная атмосфера</h1>
+            <p class="hero-text">
+                Свежие продукты, первоклассный сервис и блюда, которые хочется возвращать снова.
+                Закажите онлайн — привезём горячим или забронируем столик к вашему приезду.
+            </p>
+            <div class="hero-actions">
+                <a class="button big" href="#menu">Посмотреть меню</a>
+                <button class="button big ghost" id="heroBook" type="button">Забронировать столик</button>
+            </div>
+
+            <div class="hero-stats">
+                <div><strong>12</strong><span>столиков в зале</span></div>
+                <div><strong>40 мин</strong><span>доставка по городу</span></div>
+                <div><strong>10:00–00:00</strong><span>работаем ежедневно</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= МЕНЮ ================= -->
+    <section class="section" id="menu">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <p class="section-kicker">Меню ресторана</p>
+                    <h2>Наше меню</h2>
+                </div>
+                <p class="section-lead">
+                    Нажмите на блюдо — откроется состав и калорийность.
+                    Укажите количество порций, и цена посчитается автоматически.
+                </p>
+            </div>
+
+            <div class="menu-tabs" id="menuTabs"></div>
+            <div class="products" id="products"></div>
+        </div>
+    </section>
+
+    <!-- ================= ПРЕИМУЩЕСТВА ================= -->
+    <section class="section light" id="about">
+        <div class="container">
+            <div class="section-head center">
+                <div>
+                    <p class="section-kicker">Почему к нам возвращаются</p>
+                    <h2>Почему «Назым»?</h2>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature"><h3>Свежие продукты</h3><p>Работаем с проверенными поставщиками: мясо, овощи и молочная продукция приходят ежедневно.</p></div>
+                <div class="feature"><h3>Уютный интерьер</h3><p>Тёплый зал для семейных ужинов, встреч и праздников — до 40 гостей.</p></div>
+                <div class="feature"><h3>Быстрая доставка</h3><p>Привозим по Таразу за 40–60 минут, блюда в термосумке.</p></div>
+                <div class="feature"><h3>Оплата любым способом</h3><p>Карта, наличные или оплата по QR-коду Kaspi — быстро и безопасно.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ДОСТАВКА ================= -->
+    <section class="section" id="delivery">
+        <div class="container delivery-grid">
+            <div class="delivery-info">
+                <p class="section-kicker">Доставка на дом</p>
+                <h2>Горячее блюдо — к вашему столу</h2>
+                <p>
+                    Выберите блюда и количество порций в меню, оформите заказ — и мы зафиксируем
+                    время приготовления. Курьер приедет за 40–60 минут.
+                </p>
+                <ol class="steps">
+                    <li><b>Выберите блюда</b><span>Количество порций считается автоматически</span></li>
+                    <li><b>Оформите заказ</b><span>Адрес, телефон и удобное время</span></li>
+                    <li><b>Оплатите картой или по QR</b><span>Kaspi, Visa, Mastercard</span></li>
+                </ol>
+                <button class="button big" id="deliveryOrder" type="button">Оформить доставку</button>
+            </div>
+            <div class="delivery-card" id="deliverySummary">
+                <h3>Ваш заказ</h3>
+                <div class="mini-cart" id="miniCart"></div>
+                <div class="mini-total">Итого: <strong id="miniTotal">0 ₸</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= БРОНИРОВАНИЕ ================= -->
+    <section class="section dark-section" id="booking">
+        <div class="container booking-grid">
+            <div>
+                <p class="section-kicker">Бронирование</p>
+                <h2>Забронируйте столик заранее</h2>
+                <p>
+                    Выберите дату и время — мы подготовим стол. Можно внести предоплату картой:
+                    на телефон придёт QR-код подтверждения, а время брони будет зафиксировано.
+                </p>
+                <ul class="check-list">
+                    <li>Подтверждение брони сразу после оплаты</li>
+                    <li>Бесплатная отмена за 2 часа</li>
+                    <li>Столики от 2 до 12 гостей</li>
+                </ul>
+            </div>
+
+            <form class="booking-form card" id="bookingForm" novalidate>
+                <h3>Данные брони</h3>
+                <label class="field">
+                    <span>Имя и фамилия</span>
+                    <input type="text" id="bkName" placeholder="Алихан Сейтов" autocomplete="name">
+                </label>
+                <div class="two-col">
+                    <label class="field"><span>Телефон</span>
+                        <input type="tel" id="bkPhone" placeholder="+7 (700) 000-00-00" autocomplete="tel"></label>
+                    <label class="field"><span>Гостей</span>
+                        <input type="number" id="bkGuests" min="1" max="12" value="2"></label>
+                </div>
+                <div class="two-col">
+                    <label class="field"><span>Дата</span><input type="date" id="bkDate"></label>
+                    <label class="field"><span>Время</span><input type="time" id="bkTime" value="19:00"></label>
+                </div>
+                <button class="button big wide" id="bookPayBtn" type="submit">Забронировать и оплатить</button>
+                <p class="form-error" id="bookError"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= КОНТАКТЫ ================= -->
+    <section class="section" id="contacts">
+        <div class="container contact">
+            <div>
+                <p class="section-kicker">Контакты</p>
+                <h2>Мы на связи</h2>
+                <ul class="contact-list">
+                    <li><b>Город:</b> Тараз, Казахстан</li>
+                    <li><b>Email:</b> info@nazym-restaurant.kz</li>
+                    <li><b>Телефон и поддержка:</b> <a href="tel:+77000000000">+7 (700) 000-00-00</a></li>
+                    <li><b>Время работы:</b> ежедневно с 10:00 до 00:00</li>
+                </ul>
+                <p class="support-note">
+                    Служба поддержки отвечает ежедневно с 10:00 до 23:00 — по телефону
+                    или в чате-консультанте в правом нижнем углу.
+                </p>
+            </div>
+
+            <div class="contact-box card">
+                <h3>Быстрое бронирование</h3>
+                <p>Не хотите заполнять форму? Звоните — администратор подтвердит бронь за минуту.</p>
+                <a class="button wide" href="tel:+77000000000">Позвонить: +7 (700) 000-00-00</a>
+                <a class="button wide ghost-dark" href="mailto:info@nazym-restaurant.kz">Написать на email</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© 2026 Ресторан «Назым» · Тараз</p>
+        <div class="footer-links">
+            <a href="kitchen.html">Кухня</a>
+            <a href="waiter.html">Официанты</a>
+            <a href="admin.html">Администратор</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ================= КОРЗИНА ================= -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Корзина">
+    <div class="drawer-head">
+        <h3>Корзина</h3>
+        <button class="icon-btn" id="closeCart" type="button" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">Корзина пуста.<br>Добавьте блюда из меню.</div>
+    <div class="cart-foot">
+        <div class="cart-row"><span>Порций</span><strong id="cartPortions">0</strong></div>
+        <div class="cart-row total"><span>Итого</span><strong id="cartTotal">0 ₸</strong></div>
+        <button class="button wide" id="checkoutBtn" type="button">Оформить доставку</button>
+        <button class="button wide ghost-dark" id="cartBookBtn" type="button">Забронировать столик</button>
+    </div>
+</aside>
+
+<!-- ================= МОДАЛКА: БЛЮДО ================= -->
+<div class="modal-overlay" id="dishOverlay">
+    <div class="modal dish-modal" role="dialog" aria-modal="true">
+        <button class="icon-btn modal-close" data-close="dishOverlay" type="button" aria-label="Закрыть">✕</button>
+        <div id="dishBody"></div>
+    </div>
+</div>
+
+<!-- ================= МОДАЛКА: ОПЛАТА ================= -->
+<div class="modal-overlay" id="payOverlay">
+    <div class="modal pay-modal" role="dialog" aria-modal="true">
+        <button class="icon-btn modal-close" data-close="payOverlay" type="button" aria-label="Закрыть">✕</button>
+
+        <div id="payForm">
+            <p class="modal-kicker">Оформление</p>
+            <h3 id="payTitle">Доставка на дом</h3>
+
+            <div class="order-recap" id="orderRecap"></div>
+
+            <div id="deliveryFields">
+                <h4 class="sub-title">Адрес доставки</h4>
+                <label class="field"><span>Адрес</span>
+                    <input type="text" id="dvAddress" placeholder="Улица, дом, квартира"></label>
+                <div class="two-col">
+                    <label class="field"><span>Телефон</span>
+                        <input type="tel" id="dvPhone" placeholder="+7 (700) 000-00-00"></label>
+                    <label class="field"><span>Время доставки</span>
+                        <input type="time" id="dvTime"></label>
+                </div>
+            </div>
+
+            <h4 class="sub-title">Оплата картой</h4>
+            <div class="card-box">
+                <div class="card-preview">
+                    <span class="card-brand">NAZYM PAY</span>
+                    <span class="card-num" id="cardNumView">•••• •••• •••• ••••</span>
+                    <div class="card-bottom">
+                        <span id="cardHolderView">ВЛАДЕЛЕЦ КАРТЫ</span>
+                        <span id="cardExpView">ММ/ГГ</span>
+                    </div>
+                </div>
+
+                <label class="field"><span>Номер карты</span>
+                    <input type="text" id="cardNumber" inputmode="numeric" autocomplete="cc-number"
+                           maxlength="19" placeholder="0000 0000 0000 0000"></label>
+
+                <div class="two-col">
+                    <label class="field"><span>Срок действия</span>
+                        <input type="text" id="cardExp" inputmode="numeric" maxlength="5" placeholder="ММ/ГГ"></label>
+                    <label class="field"><span>CVV / CVC (пароль с карты)</span>
+                        <div class="cvv-wrap">
+                            <input type="password" id="cardCvv" inputmode="numeric" maxlength="3"
+                                   placeholder="•••" autocomplete="off">
+                            <button class="eye-btn" id="cvvToggle" type="button" aria-label="Показать код">👁</button>
+                        </div>
+                    </label>
+                </div>
+
+                <label class="field"><span>Имя на карте</span>
+                    <input type="text" id="cardHolder" autocomplete="cc-name" placeholder="ALIBEK SEITOV"></label>
+            </div>
+
+            <div class="pay-summary">
+                <span>К оплате</span>
+                <strong id="payAmount">0 ₸</strong>
+            </div>
+            <p class="form-error" id="payError"></p>
+            <button class="button big wide" id="payBtn" type="button">Оплатить и получить QR</button>
+        </div>
+
+        <!-- Успешная оплата -->
+        <div class="pay-result hidden" id="payResult">
+            <div class="success-mark">✓</div>
+            <h3>Оплата прошла успешно</h3>
+            <p id="resultInfo"></p>
+            <div class="qr-box">
+                <canvas id="qrCanvas" width="300" height="300"></canvas>
+            </div>
+            <p class="qr-hint">Покажите QR-код курьеру или администратору при входе.</p>
+            <div class="qr-payload" id="qrPayload"></div>
+            <button class="button wide" data-close="payOverlay" type="button">Готово</button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= РАЗДЕЛЫ ПЕРСОНАЛА ================= -->
+<div class="modal-overlay" id="staffOverlay">
+    <div class="modal staff-modal" role="dialog" aria-modal="true">
+        <button class="icon-btn modal-close" data-close="staffOverlay" type="button" aria-label="Закрыть">✕</button>
+        <p class="modal-kicker">Служебный вход</p>
+        <h3>Разделы для персонала</h3>
+        <p class="staff-note">
+            Каждый раздел открывается по парольному коду, выданному в ресторане.
+            Гостям эта часть сайта недоступна.
+        </p>
+
+        <div class="staff-cards">
+            <a class="staff-card" href="kitchen.html">
+                <span class="staff-ico">👨‍🍳</span>
+                <b>Повара</b>
+                <span class="staff-desc">Запасы продовольствия, список что докупить, заявки и заказы на готовку</span>
+                <span class="staff-go">Открыть раздел →</span>
+            </a>
+
+            <a class="staff-card" href="waiter.html">
+                <span class="staff-ico">🍽</span>
+                <b>Официанты</b>
+                <span class="staff-desc">Схема зала, занятые столики, брони гостей и заказы со временем</span>
+                <span class="staff-go">Открыть раздел →</span>
+            </a>
+
+            <a class="staff-card" href="admin.html">
+                <span class="staff-ico">📊</span>
+                <b>Администратор</b>
+                <span class="staff-desc">Касса за три дня, поставки, остатки, заявки на посуду и моющие средства</span>
+                <span class="staff-go">Открыть раздел →</span>
+            </a>
+        </div>
+
+        <p class="staff-help">
+            Вопросы по работе сайта: <a href="tel:+77000000000">+7 (700) 000-00-00</a>
+        </p>
+    </div>
+</div>
+
+<!-- ================= ИИ-КОНСУЛЬТАНТ ================= -->
+<button class="chat-fab" id="chatFab" type="button" aria-label="Чат с консультантом">💬</button>
+
+<div class="chat-panel" id="chatPanel">
+    <div class="chat-head">
+        <div>
+            <b>Назымик — ИИ-консультант</b>
+            <span>онлайн · отвечает мгновенно</span>
+        </div>
+        <button class="icon-btn" id="chatClose" type="button" aria-label="Закрыть">✕</button>
+    </div>
+
+    <div class="chat-body" id="chatBody"></div>
+
+    <div class="chat-chips" id="chatChips"></div>
+
+    <form class="chat-input" id="chatForm">
+        <input type="text" id="chatText" placeholder="Спросите про меню, цены, состав или бронь…" autocomplete="off">
+        <button class="button small" type="submit">➤</button>
+    </form>
+</div>
+
+<script src="qr.js?v=2"></script>
+<script src="data.js?v=2"></script>
+<script src="script.js?v=6"></script>
+</body>
+</html>

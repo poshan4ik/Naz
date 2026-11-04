@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зал — официанты · Назым</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23c05621'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Arial' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3E%D0%9D%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body class="staff-page">
+
+<!-- ================= ВХОД ================= -->
+<div class="login-wrap" id="login">
+    <p class="section-kicker">Ресторан «Назым»</p>
+    <h1 id="loginTitle">Зал — официанты</h1>
+    <p id="loginRole">Вход для: Официант</p>
+    <form id="loginForm">
+        <label class="field">
+            <span>Пароль персонала</span>
+            <input type="password" id="loginPass" placeholder="••••" autocomplete="current-password" autofocus>
+        </label>
+        <button class="button wide" type="submit">Войти</button>
+        <p class="login-error" id="loginError"></p>
+        <button class="btn-ghost" type="button" id="loginBack">← На сайт</button>
+    </form>
+</div>
+
+<!-- ================= ПРИЛОЖЕНИЕ ================= -->
+<div class="hidden" id="app">
+    <header class="staff-head">
+        <div class="container">
+            <div>
+                <span class="staff-role" id="roleName">Официант</span>
+                <h1>Зал ресторана «Назым»</h1>
+            </div>
+            <div class="spacer"></div>
+            <div id="staffStats" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+            <button class="btn-ghost" id="logoutBtn" type="button">Выйти</button>
+            <a class="back-link" href="index.html">← На сайт</a>
+        </div>
+    </header>
+
+    <main class="staff-main">
+        <div class="container">
+
+            <div class="grid-3" style="margin-bottom:22px">
+                <div class="stat-card green"><span class="label">Свободные столики</span>
+                    <div class="value" id="kpiFree">0</div><span class="sub">из 12 в зале</span></div>
+                <div class="stat-card"><span class="label">Занятые столики</span>
+                    <div class="value" id="kpiBusy">0</div><span class="sub">на обслуживании</span></div>
+                <div class="stat-card gold"><span class="label">Броней сегодня</span>
+                    <div class="value" id="kpiRes">0</div><span class="sub">подтверждено и ожидает</span></div>
+            </div>
+
+            <section class="panel">
+                <div class="panel-head">
+                    <h2>🪑 Схема зала</h2>
+                    <span class="hint">нажмите на столик, чтобы изменить статус</span>
+                </div>
+                <div class="floor" id="floor"></div>
+            </section>
+
+            <div class="grid-2" style="margin-top:22px">
+
+                <!-- Бронирования -->
+                <section class="panel">
+                    <div class="panel-head">
+                        <h2>📅 Брони гостей</h2>
+                        <span class="hint">созданные на сайте и по телефону</span>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="data">
+                            <thead>
+                                <tr><th>№</th><th>Гость</th><th>Дата и время</th><th>Гостей</th><th>Стол</th><th>Статус</th><th></th></tr>
+                            </thead>
+                            <tbody id="resRows"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Заказы / время -->
+                <section class="panel">
+                    <div class="panel-head">
+                        <h2>🧾 Заказы и время</h2>
+                        <span class="hint">время заказа зафиксировано</span>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="data">
+                            <thead><tr><th>№</th><th>Время</th><th>Состав</th><th>Сумма</th><th>Статус</th><th></th></tr></thead>
+                            <tbody id="orderRows"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="data.js?v=2"></script>
+<script src="staff.js?v=2"></script>
+<script src="waiter.js?v=3"></script>
+</body>
+</html>

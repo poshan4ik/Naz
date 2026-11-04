@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кухня — повара · Назым</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23c05621'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Arial' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3E%D0%9D%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body class="staff-page">
+
+<!-- ================= ВХОД ================= -->
+<div class="login-wrap" id="login">
+    <p class="section-kicker">Ресторан «Назым»</p>
+    <h1 id="loginTitle">Кухня — повара</h1>
+    <p id="loginRole">Вход для: Повар</p>
+    <form id="loginForm">
+        <label class="field">
+            <span>Пароль персонала</span>
+            <input type="password" id="loginPass" placeholder="••••" autocomplete="current-password" autofocus>
+        </label>
+        <button class="button wide" type="submit">Войти</button>
+        <p class="login-error" id="loginError"></p>
+        <button class="btn-ghost" type="button" id="loginBack">← На сайт</button>
+    </form>
+</div>
+
+<!-- ================= ПРИЛОЖЕНИЕ ================= -->
+<div class="hidden" id="app">
+    <header class="staff-head">
+        <div class="container">
+            <div>
+                <span class="staff-role" id="roleName">Повар</span>
+                <h1>Кухня ресторана «Назым»</h1>
+            </div>
+            <div class="spacer"></div>
+            <div id="staffStats" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+            <button class="btn-ghost" id="logoutBtn" type="button">Выйти</button>
+            <a class="back-link" href="index.html">← На сайт</a>
+        </div>
+    </header>
+
+    <main class="staff-main">
+        <div class="container">
+
+            <!-- Что докупить -->
+            <div class="alert-bar" id="buyAlert">
+                <b>⚠ Что докупить:</b> остаток ниже минимума
+                <ul id="buyList"></ul>
+            </div>
+
+            <!-- Показатели -->
+            <div class="grid-3" style="margin-bottom:22px">
+                <div class="stat-card"><span class="label">Позиций на складе</span>
+                    <div class="value" id="kpiItems">0</div><span class="sub">продовольствие и расходники кухни</span></div>
+                <div class="stat-card gold"><span class="label">Нужно закупить</span>
+                    <div class="value" id="kpiLow">0</div><span class="sub">позиции на нуле / ниже минимума</span></div>
+                <div class="stat-card green"><span class="label">Заказов сегодня</span>
+                    <div class="value" id="kpiOrders">0</div><span class="sub">на готовку</span></div>
+            </div>
+
+            <div class="grid-2">
+
+                <!-- Запасы продовольствия -->
+                <section class="panel">
+                    <div class="panel-head">
+                        <h2>🧺 Запасы продовольствия</h2>
+                        <span class="hint">вводите остаток каждый раз после приёмки</span>
+                    </div>
+
+                    <form class="inline-form" id="stockForm" style="margin-bottom:16px">
+                        <label class="field"><span>Наименование</span><input type="text" id="stName" placeholder="Сливки"></label>
+                        <label class="field"><span>Остаток</span><input type="number" id="stQty" step="0.1" min="0" placeholder="5"></label>
+                        <label class="field"><span>Ед.</span><input type="text" id="stUnit" placeholder="л" style="max-width:80px"></label>
+                        <label class="field"><span>Минимум</span><input type="number" id="stMin" step="0.1" min="0" placeholder="6"></label>
+                        <button class="button small" type="submit">Добавить</button>
+                    </form>
+
+                    <div class="table-wrap">
+                        <table class="data">
+                            <thead>
+                                <tr><th>Продукт</th><th>Остаток</th><th>Минимум</th><th>Статус</th><th></th></tr>
+                            </thead>
+                            <tbody id="stockRows"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Правая колонка -->
+                <div>
+                    <!-- Список закупки -->
+                    <section class="panel">
+                        <div class="panel-head">
+                            <h2>🛒 Список на закупку</h2>
+                            <button class="btn-ghost" id="sendBuyBtn" type="button">Отправить администратору</button>
+                        </div>
+                        <div class="table-wrap">
+                            <table class="data">
+                                <thead><tr><th>Продукт</th><th>Нужно</th><th>Не хватает</th></tr></thead>
+                                <tbody id="buyRows"></tbody>
+                            </table>
+                        </div>
+                        <p class="hint" id="buySent" style="color:var(--ink-soft);font-size:.82rem"></p>
+                    </section>
+
+                    <!-- Очередь заказов -->
+                    <section class="panel">
+                        <div class="panel-head">
+                            <h2>⏱ Заказы на готовку</h2>
+                            <span class="hint">время фиксируется автоматически</span>
+                        </div>
+                        <div class="table-wrap">
+                            <table class="data">
+                                <thead><tr><th>№</th><th>Время</th><th>Состав</th><th>Статус</th><th></th></tr></thead>
+                                <tbody id="orderRows"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="data.js?v=2"></script>
+<script src="staff.js?v=2"></script>
+<script src="kitchen.js?v=2"></script>
+</body>
+</html>
